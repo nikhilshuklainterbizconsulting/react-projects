@@ -7,6 +7,17 @@
   pointer-events: none;
 }
 
+.calendar-table tr td {
+  padding: 20px 5px;
+  border: 1px solid grey;
+  text-align: center;
+}
+
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
