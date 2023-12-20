@@ -1,6 +1,6 @@
 
 
-export function CalendarComponent({ monthNo }) {
+export function CalendarComponent({ monthNo, headerColor, headerTextColor }) {
 
     const getMonthTable = (monthNo) => {
         const maxDays = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
@@ -49,7 +49,7 @@ export function CalendarComponent({ monthNo }) {
     console.log ( { monthTable } );
     return (<>
         <table className="calendar-table">
-            <tr>
+            <tr style={ ({ background: headerColor, color: headerTextColor || "#fff" }) }>
                 <td>S</td>
                 <td>M</td>
                 <td>T</td>

@@ -7,16 +7,21 @@
   pointer-events: none;
 }
 
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calendar-table .header {
+  background-color: grey;
+}
+
 .calendar-table tr td {
   padding: 20px 5px;
   border: 1px solid grey;
   text-align: center;
 }
 
-.calendar-table {
-  width: 100%;
-  border-collapse: collapse;
-}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
