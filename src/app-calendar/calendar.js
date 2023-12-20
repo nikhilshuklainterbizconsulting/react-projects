@@ -62,7 +62,7 @@ export function CalendarComponent({ monthNo }) {
                 monthTable.map(
                     (monthRow, monthRowIndex) => {
                         return (
-                            <tr key={ monthRowIndex }>
+                            <tr key={  monthRow + "" + monthRowIndex }>
                                 { monthRow.map(dateText => <td key={dateText}>{dateText}</td>) }
                             </tr>
                         )
