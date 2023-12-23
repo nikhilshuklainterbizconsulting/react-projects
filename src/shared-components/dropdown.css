@@ -1,14 +1,23 @@
 
 
 .dropdown-box {
+    position: relative;
     border: 1px solid grey;
     padding: 10px 20px;
-    
     cursor: pointer;
+    display: inline-block;
 }
 
 .dropdown-list-container {
-    border: 1px solid rgb(81, 93, 199)
+    width: 100%;
+    border: 1px solid rgb(205, 210, 255);
+    border-radius: 14px;
+    position: absolute;
+    left: 0px;
+    bottom: -2px;
+    transform: translateY(100%);
+    background-color: #fff;
+    overflow: hidden;
 }
 
 .dropdown-list-item {
@@ -17,7 +26,8 @@
 }
 .dropdown-list-item:hover {
     padding: 10px 20px;
-    background-color: rgb(77, 77, 77);
-    color: white;
+    background-color: rgb(205, 210, 255);
+    /* background-color: rgb(218, 218, 218); */
+    /* color: white; */
 }
 
