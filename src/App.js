@@ -2,6 +2,7 @@ import { monthHeaderColors, monthsList } from './app-contants';
 import './App.css';
 import { CalendarComponent } from './app-calendar/calendar'
 import { useState } from 'react';
+import { Dropdown } from './shared-components/dropdown';
 function App() {
   const today = new Date();
   const [ currentMonth, selectMonth ] = useState(+(today.getMonth()) + 1);
@@ -12,6 +13,11 @@ function App() {
   monthsList.forEach((x,i) => {
     x.headerColor = monthHeaderColors[i];
   });
+
+  const eventFromDropdown = (listItem, listItemindex) => {
+    console.log({listItem, listItemindex})
+  };
+
   return (
     <>
       <select onChange={(event) => {
@@ -29,6 +35,11 @@ function App() {
           headerColor = { currentMonthHeaderColor }
           headerTextColor = { currentMonthHeaderTextColor }
           ></CalendarComponent>
+          <Dropdown optionChosen={ eventFromDropdown } dataList={[
+            { DisplayValue: "option1", SelectValue: "Option1" },
+            { DisplayValue: "option2", SelectValue: "Option2" },
+            { DisplayValue: "option3", SelectValue: "Option3" },
+          ]}></Dropdown>
       </div>
     </>
   );

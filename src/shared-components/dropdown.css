@@ -1,0 +1,23 @@
+
+
+.dropdown-box {
+    border: 1px solid grey;
+    padding: 10px 20px;
+    
+    cursor: pointer;
+}
+
+.dropdown-list-container {
+    border: 1px solid rgb(81, 93, 199)
+}
+
+.dropdown-list-item {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.dropdown-list-item:hover {
+    padding: 10px 20px;
+    background-color: rgb(77, 77, 77);
+    color: white;
+}
+
