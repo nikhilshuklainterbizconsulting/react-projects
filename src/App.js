@@ -8,7 +8,8 @@ function App() {
   const [ currentMonth, selectMonth ] = useState(+(today.getMonth()) + 1);
   const [ currentMonthHeaderColor, selectMonthHeaderColor ] = useState(today.getMonth());
   const [ currentMonthHeaderTextColor, selectMonthHeaderTextColor ] = useState(today.getMonth() < 2 ? "#fff" : "#000");
-
+  
+  const monthDropdownList = monthsList.map(month => <option value={ month.SelectValue }> { month.DisplayValue } </option>)
   
   monthsList.forEach((x,i) => {
     x.headerColor = monthHeaderColors[i];
@@ -24,22 +25,18 @@ function App() {
         selectMonth(+event.target.value);
         selectMonthHeaderColor(monthHeaderColors[+event.target.value]);
       }}>
-        {
-          monthsList.map(month => <option value={ month.SelectValue }> { month.DisplayValue } </option>)
-        }
+        { monthDropdownList }
       </select>
       <h1>{ currentMonth }</h1>
       <div style={ ({ width: "80%", margin: "auto" }) }>
-        <CalendarComponent 
-          monthNo = { currentMonth } 
-          headerColor = { currentMonthHeaderColor }
-          headerTextColor = { currentMonthHeaderTextColor }
+          <CalendarComponent 
+            monthNo = { currentMonth } 
+            headerColor = { currentMonthHeaderColor }
+            headerTextColor = { currentMonthHeaderTextColor }
           ></CalendarComponent>
-          <Dropdown optionChosen={ eventFromDropdown } dataList={[
-            { DisplayValue: "option1", SelectValue: "Option1" },
-            { DisplayValue: "option2", SelectValue: "Option2" },
-            { DisplayValue: "option3", SelectValue: "Option3" },
-          ]}></Dropdown>
+          <div style={ { width: "30%" } }>
+            <Dropdown optionChosen={ eventFromDropdown } dataList={ monthsList }></Dropdown>
+          </div>
       </div>
     </>
   );
